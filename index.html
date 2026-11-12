@@ -1,0 +1,485 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>من أحمد إلى شهوده ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ margin:0;min-height:100vh;overflow-x:hidden;
+ font-family:'Cairo',sans-serif;color:white;text-align:center;
+ background:radial-gradient(ellipse at bottom,#192b55 0%,#0a122a 55%,#030611 100%);
+}
+button,input{font-family:inherit}
+button{cursor:pointer}
+#sky{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.star{
+ position:absolute;width:2px;height:2px;border-radius:50%;
+ background:#fff;box-shadow:0 0 8px #fff;
+ animation:twinkle 2s infinite alternate;
+}
+@keyframes twinkle{from{opacity:.2;transform:scale(.7)}to{opacity:1;transform:scale(1.5)}}
+.moon{
+ position:fixed;top:55px;left:8%;width:65px;height:65px;
+ border-radius:50%;background:#fff4d2;
+ box-shadow:0 0 30px #fff2bd,0 0 75px #fff2bd55;
+ z-index:1;
+}
+.shooting{
+ position:fixed;width:120px;height:2px;
+ background:linear-gradient(90deg,#fff,transparent);
+ transform:rotate(-35deg);animation:shoot 1.2s linear forwards;
+ z-index:2;pointer-events:none;
+}
+@keyframes shoot{
+ from{opacity:1;transform:translate(0,0) rotate(-35deg)}
+ to{opacity:0;transform:translate(-300px,200px) rotate(-35deg)}
+}
+main{position:relative;z-index:3;padding:25px 15px;max-width:680px;margin:auto}
+h1{font-size:clamp(27px,7vw,43px);color:#f5dcff;margin:18px 0}
+h2{color:#f4c7e7}
+p{line-height:2}
+.subtitle{color:#c4cce9}
+.card{
+ margin:22px auto;padding:23px 17px;
+ border:1px solid #ffffff25;border-radius:24px;
+ background:#ffffff0d;backdrop-filter:blur(12px);
+ box-shadow:0 0 35px #8e69ff18;
+}
+.btn{
+ border:0;border-radius:30px;padding:12px 24px;
+ color:white;font-size:15px;font-weight:bold;
+ background:linear-gradient(120deg,#8158d9,#d35b9c);
+ box-shadow:0 5px 20px #a45be955;transition:.2s;
+}
+.btn:active{transform:scale(.95)}
+.btn.secondary{background:linear-gradient(120deg,#344c85,#7451a9)}
+.hidden{display:none!important}
+#intro{
+ position:fixed;inset:0;z-index:20;display:flex;
+ flex-direction:column;align-items:center;justify-content:center;
+ padding:25px;background:radial-gradient(ellipse at center,#27365f,#080d20 75%);
+}
+#intro p{color:#d4d9f2}
+#nameSky{
+ direction:ltr;min-height:90px;font-size:clamp(30px,9vw,55px);
+ font-weight:800;letter-spacing:7px;color:white;
+ text-shadow:0 0 22px #c9aaff;
+}
+.nameLetter{display:inline-block;opacity:0;animation:formName .8s forwards}
+@keyframes formName{to{opacity:1}}
+#musicBtn{
+ border:1px solid #ffffff40;border-radius:30px;
+ background:#172345;color:white;padding:9px 14px;
+}
+.music-card{
+ margin:25px auto;padding:17px;border-radius:20px;
+ border:1px solid #d8b7ff55;background:#ffffff0c;
+}
+.music-title{color:#f3d5ff;font-weight:bold}
+iframe{width:100%;max-width:440px;border:0;border-radius:14px}
+input{
+ width:min(100%,280px);padding:13px;border-radius:13px;
+ border:1px solid #bba5ff;background:#101a37;
+ color:white;text-align:center;font-size:19px;
+ outline:none;margin:12px 0;
+}
+.envelope{
+ position:relative;width:180px;height:115px;margin:28px auto;
+ background:#bd78ae;border-radius:8px;cursor:pointer;
+ box-shadow:0 0 35px #d16da966;transition:.5s;
+}
+.envelope:before{
+ content:"";position:absolute;top:0;left:0;right:0;margin:auto;
+ border-left:90px solid transparent;border-right:90px solid transparent;
+ border-top:70px solid #e6a3d0;z-index:2;
+ transform-origin:top;transition:.6s;
+}
+.envelope:after{
+ content:"♥";position:absolute;top:42px;left:0;right:0;
+ color:white;font-size:32px;z-index:3;
+}
+.envelope.open:before{transform:rotateX(180deg)}
+.envelope span{position:absolute;bottom:12px;left:0;right:0;color:white;font-size:13px;z-index:4}
+#letter,#personalLetter{
+ margin:20px auto;padding:23px 18px;max-width:540px;
+ border:1px solid #e7b9e866;border-radius:20px;
+ background:linear-gradient(145deg,#fff0f5,#f4d9ee);
+ color:#45264d;box-shadow:0 0 35px #e18bce44;
+}
+#letter h2,#personalLetter h2{color:#9c367c}
+.letter-text{line-height:2.2;white-space:pre-line;min-height:160px}
+#personalText{line-height:2.2;white-space:pre-line;text-align:right}
+.continue{margin:20px auto}
+.memory-heart{
+ display:inline-flex;align-items:center;justify-content:center;
+ width:75px;height:75px;border-radius:50%;
+ margin:8px;background:linear-gradient(140deg,#b95fbc,#744cbb);
+ font-size:30px;box-shadow:0 0 20px #c47ad866;
+ border:1px solid #ffffff55;transition:.25s;
+}
+.memory-heart:active{transform:scale(.9)}
+.memory-note{
+ margin:12px auto;padding:15px;border-radius:16px;
+ background:#ffffff12;border:1px solid #ffffff25;
+ color:#f6d9f2;line-height:2;
+}
+#finale{
+ padding:25px 12px;margin:25px auto;
+}
+.big-heart{
+ font-size:85px;filter:drop-shadow(0 0 25px #ff8bd6);
+ animation:heartbeat 1.5s infinite;
+}
+@keyframes heartbeat{0%,100%{transform:scale(1)}50%{transform:scale(1.13)}}
+.signature{
+ margin:25px auto;padding:22px;border-radius:22px;
+ background:#ffffff0c;border:1px solid #ffffff30;
+}
+.signature strong{font-size:30px;color:#f5d5ff;display:block}
+.signature small{color:#d8b6e9}
+.heart{
+ position:fixed;bottom:-35px;z-index:8;pointer-events:none;
+ animation:floatHeart linear forwards;
+}
+@keyframes floatHeart{
+ to{transform:translateY(-110vh) rotate(360deg);opacity:0}
+}
+.spark{position:fixed;z-index:30;pointer-events:none;animation:spark .8s forwards}
+@keyframes spark{to{transform:translateY(-45px) scale(1.8);opacity:0}}
+footer{color:#9ca7ce;font-size:12px;padding:25px}
+</style>
+</head>
+
+<body>
+<div id="sky"></div>
+<div class="moon"></div>
+
+<div id="intro">
+ <h1>فيه حد مجهزلك حاجة صغيرة يا شهوده ❤️</h1>
+ <p>مستعدة تدخلي عالم معمول مخصوص علشانك؟</p>
+ <div id="nameSky"></div>
+ <button class="btn" onclick="enterWorld()">ادخلي عالمنا ✨</button>
+</div>
+
+<main>
+ <h1>عالم شهوده ❤️</h1>
+ <p class="subtitle">مكان صغير... بس جواه كلام كتير ليكي</p>
+
+ <section class="music-card">
+  <div class="music-title">أغنيتنا يا شهوده 🎵</div>
+  <p>نفسي أعيش كل الليالي وياك ❤️</p>
+  <iframe
+   height="200"
+   src="https://www.youtube-nocookie.com/embed/CwKvsoCILOw"
+   title="أغنية شهوده"
+   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+   allowfullscreen>
+  </iframe>
+  <p style="font-size:12px;color:#bfc8e8">اضغطي تشغيل علشان تسمعي الأغنية</p>
+ </section>
+
+ <section class="card" id="question">
+  <h2>إحنا مع بعض بقالنا قد إيه؟ 🥹</h2>
+  <p>اكتبي الرقم اللي في بالك ❤️</p>
+  <input id="answer" type="number" placeholder="اكتبي أي رقم">
+  <br>
+  <button class="btn" onclick="reveal()">افتحي المفاجأة 💌</button>
+ </section>
+
+ <section id="surprise" class="hidden">
+  <h1>المفاجأة ليكي يا شهوده ❤️</h1>
+  <p>فيه رسالة مستنياكي...</p>
+
+  <div id="envelopeArea">
+   <div class="envelope" id="envelope" onclick="openLetter()">
+    <span>اضغطي هنا 💌</span>
+   </div>
+  </div>
+
+  <div id="letter" class="hidden">
+   <h2>إلى شهودتي الجميلة ❤️</h2>
+   <div id="letterText" class="letter-text"></div>
+   <button id="continueOne" class="btn continue hidden" onclick="showPersonal()">
+    كمّلي المفاجأة يا شهوده ✨
+   </button>
+  </div>
+
+  <section id="personalLetter" class="hidden">
+   <h2>من قلبي ليكي، ومن إيدي كمان ❤️</h2>
+   <div id="personalText"></div>
+   <button id="continueTwo" class="btn continue hidden" onclick="showMemories()">
+    لسه فيه مفاجآت تانية 🥹
+   </button>
+  </section>
+
+  <section id="memories" class="card hidden">
+   <h2>3 قلوب... وكل قلب وراه كلمة ❤️</h2>
+   <p>اختاري قلب وافتحي الرسالة اللي جواه</p>
+   <div>
+    <button class="memory-heart" onclick="openMemory(0)">♥</button>
+    <button class="memory-heart" onclick="openMemory(1)">♥</button>
+    <button class="memory-heart" onclick="openMemory(2)">♥</button>
+   </div>
+   <div id="memoryNote" class="memory-note hidden"></div>
+   <button id="continueThree" class="btn continue hidden" onclick="showFinale()">
+    افتحي آخر مفاجأة يا شهوده 💗
+   </button>
+  </section>
+
+  <section id="finale" class="hidden">
+   <div class="big-heart">💖</div>
+   <h1>عارفة إيه أحلى صدفة في حياتي؟</h1>
+   <p style="font-size:19px;color:#f4d6ff">
+    إنك بقيتي جزء منها يا شهوده ❤️
+   </p>
+   <p>
+    دي مش نهاية الموقع...<br>
+    دي بداية حكايات كتير لسه مستنيانا سوا ♾️
+   </p>
+
+   <div class="signature">
+    <small>Made with love by</small>
+    <strong>Ahmed Wael</strong>
+    <small>For my Shahoda ❤️</small>
+    <p>مش كل الناس بتعرف تكتب اللي جواها، فقررت أعملهولك بإيدي.</p>
+   </div>
+
+   <button class="btn" onclick="replay()">عايزة أعيش المفاجأة من الأول؟ 🔁</button>
+  </section>
+ </section>
+
+ <footer>اتعمل بحب مخصوص لشهوده ✨</footer>
+</main>
+
+<script>
+// نجوم السماء
+const sky=document.getElementById('sky');
+for(let i=0;i<150;i++){
+ const s=document.createElement('i');
+ s.className='star';
+ s.style.left=Math.random()*100+'%';
+ s.style.top=Math.random()*100+'%';
+ s.style.animationDelay=Math.random()*3+'s';
+ s.style.opacity=Math.random();
+ sky.appendChild(s);
+}
+
+// تكوين اسم SHAHD
+const nameSky=document.getElementById('nameSky');
+'SHAHD'.split('').forEach((letter,i)=>{
+ const span=document.createElement('span');
+ span.className='nameLetter';
+ span.textContent=letter;
+ span.style.animationDelay=(i*.6)+'s';
+ nameSky.appendChild(span);
+});
+
+// شهب
+function shootingStar(){
+ const s=document.createElement('div');
+ s.className='shooting';
+ s.style.left=(Math.random()*80+10)+'%';
+ s.style.top=(Math.random()*45)+'%';
+ document.body.appendChild(s);
+ setTimeout(()=>s.remove(),1300);
+}
+setInterval(shootingStar,3500);
+
+// الدخول
+function enterWorld(){
+ document.getElementById('intro').classList.add('hidden');
+ heartRain(12);
+}
+
+// قلوب متحركة
+function heartRain(count=30){
+ for(let i=0;i<count;i++){
+  setTimeout(()=>{
+   const h=document.createElement('div');
+   h.className='heart';
+   h.textContent=['❤️','💗','💕','💖','💘'][Math.floor(Math.random()*5)];
+   h.style.left=Math.random()*100+'%';
+   h.style.fontSize=(15+Math.random()*25)+'px';
+   h.style.animationDuration=(3+Math.random()*4)+'s';
+   document.body.appendChild(h);
+   setTimeout(()=>h.remove(),7500);
+  },i*90);
+ }
+}
+
+// الانتقال للمفاجأة
+function reveal(){
+ const val=document.getElementById('answer').value;
+ if(val.trim()===''){
+  alert('اكتبي أي رقم الأول يا شهوده ❤️');
+  return;
+ }
+ document.getElementById('question').classList.add('hidden');
+ document.getElementById('surprise').classList.remove('hidden');
+ heartRain(55);
+}
+
+// الرسالة الأولى
+let opened=false;
+const message=`بحبك يا شهد ❤️
+
+يمكن مش بعرف أقول كل اللي جوايا بالكلام،
+بس عايزك تعرفي إنك شخص مميز جدًا عندي.
+
+بتمنى نفضل جنب بعض،
+ونعدي كل حاجة سوا،
+ونفضل نضحك ونفرح ونصنع ذكريات حلوة.
+
+ونفسي نكمل حياتنا سوا،
+وتفضلي دايمًا جزء جميل من أيامي.
+
+بحبك، ويا رب نفضل لبعض العمر كله ❤️`;
+
+function typeText(target,text,speed,callback){
+ let i=0;
+ target.textContent='';
+ function write(){
+  if(i<text.length){
+   target.textContent+=text.charAt(i);
+   i++;
+   setTimeout(write,speed);
+  }else if(callback){callback();}
+ }
+ write();
+}
+
+function openLetter(){
+ if(opened)return;
+ opened=true;
+ document.getElementById('envelope').classList.add('open');
+ setTimeout(()=>{
+  document.getElementById('letter').classList.remove('hidden');
+  heartRain(30);
+  typeText(
+   document.getElementById('letterText'),
+   message,45,
+   ()=>document.getElementById('continueOne').classList.remove('hidden')
+  );
+ },550);
+}
+
+// الرسالة الشخصية من أحمد
+const personalMessage=`يا شهوده ❤️
+
+عارفة إن الموقع ده مش مجرد صفحة على الإنترنت،
+ولا مجرد شوية نجوم وقلوب وكلام مكتوب.
+
+أنا اللي فكرت في كل تفصيلة فيه،
+واخترت الألوان، ورتبت النجوم، وعملت الرسائل،
+وحاولت أخلي كل ضغطة فيه تخبي وراها مفاجأة جديدة.
+
+يمكن أنا مش محترف في إني أعبّر عن كل اللي جوايا بالكلام،
+بس حبيت أعملك حاجة مختلفة،
+حاجة تفضلي تفتكري إن فيه حد قعد يفكر إزاي يرسم ابتسامة على وشك.
+
+كل تفصيلة هنا وراها وقت وتفكير ومجهود،
+وأجمل حاجة عندي إنك تشوفيها وتعرفي إن كل ده معمول مخصوص علشانك.
+
+أنا مش بقول إن الموقع ده أغلى حاجة ممكن أقدمهالك،
+لكن بقولك إن كل حرف فيه اتكتب وأنا بفكر فيكي.
+
+نفسي أعيش معاكي كل الليالي،
+ونصنع ذكريات أكتر،
+ونفضل نختار بعض مهما الأيام اتغيرت.
+
+من أحمد لشهوده...
+بكل الحب اللي مش عارف أوصفه ❤️
+
+وده مش مجرد موقع خلصته،
+دي ذكرى صغيرة حبيت أسيبهالك من إيدي وقلبي.`;
+
+function showPersonal(){
+ const section=document.getElementById('personalLetter');
+ section.classList.remove('hidden');
+ heartRain(25);
+ typeText(
+  document.getElementById('personalText'),
+  personalMessage,38,
+  ()=>document.getElementById('continueTwo').classList.remove('hidden')
+ );
+ section.scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+// القلوب والرسائل الثلاث
+const memories=[
+ 'أجمل حاجة في يومي إن فيه حد بيخليني أبتسم من قلبي... وإنتي الحد ده يا شهوده ❤️',
+ 'نفسي كل الأيام اللي جاية يكون فيها ضحك وذكريات ومواقف حلوة نفضل نفتكرها سوا 🥹',
+ 'لو هختار أكتب أمنية واحدة، هتكون إننا نفضل جنب بعض ونختار بعض كل يوم ♾️'
+];
+let memoryOpened=[false,false,false];
+
+function openMemory(index){
+ const note=document.getElementById('memoryNote');
+ note.classList.remove('hidden');
+ note.textContent=memories[index];
+ memoryOpened[index]=true;
+ heartRain(12);
+ if(memoryOpened.every(Boolean)){
+  document.getElementById('continueThree').classList.remove('hidden');
+ }
+}
+
+// النهاية
+function showMemories(){
+ const section=document.getElementById('memories');
+ section.classList.remove('hidden');
+ section.scrollIntoView({behavior:'smooth',block:'center'});
+ heartRain(25);
+}
+function showFinale(){
+ const section=document.getElementById('finale');
+ section.classList.remove('hidden');
+ section.scrollIntoView({behavior:'smooth',block:'center'});
+ heartRain(65);
+}
+
+// إعادة التجربة
+function replay(){
+ opened=false;
+ memoryOpened=[false,false,false];
+ document.getElementById('answer').value='';
+ document.getElementById('question').classList.remove('hidden');
+ document.getElementById('surprise').classList.add('hidden');
+ document.getElementById('letter').classList.add('hidden');
+ document.getElementById('personalLetter').classList.add('hidden');
+ document.getElementById('memories').classList.add('hidden');
+ document.getElementById('finale').classList.add('hidden');
+ document.getElementById('continueOne').classList.add('hidden');
+ document.getElementById('continueTwo').classList.add('hidden');
+ document.getElementById('continueThree').classList.add('hidden');
+ document.getElementById('secretBtn')?.classList.add('hidden');
+ document.getElementById('memoryNote').classList.add('hidden');
+ document.getElementById('memoryNote').textContent='';
+ document.getElementById('envelope').classList.remove('open');
+ document.getElementById('letterText').textContent='';
+ document.getElementById('personalText').textContent='';
+ document.getElementById('intro').classList.remove('hidden');
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// تأثير اللمس
+document.addEventListener('pointerdown',e=>{
+ const el=document.createElement('div');
+ el.className='spark';
+ el.textContent=['✨','💗','⭐','💕'][Math.floor(Math.random()*4)];
+ el.style.left=e.clientX+'px';
+ el.style.top=e.clientY+'px';
+ el.style.fontSize='20px';
+ document.body.appendChild(el);
+ setTimeout(()=>el.remove(),850);
+});
+</script>
+</body>
+</html>
