@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080d20">
 <title>من أحمد إلى شهوده ❤️</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
@@ -13,131 +12,192 @@
 html{scroll-behavior:smooth}
 body{
  margin:0;min-height:100vh;overflow-x:hidden;
- font-family:'Cairo',sans-serif;color:white;text-align:center;
- background:radial-gradient(ellipse at bottom,#192b55 0%,#0a122a 55%,#030611 100%);
+ font-family:Cairo,sans-serif;color:white;text-align:center;
+ background:radial-gradient(ellipse at bottom,#1b315c,#0a122a 55%,#030611);
 }
 button,input{font-family:inherit}
 button{cursor:pointer}
 #sky{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
 .star{
  position:absolute;width:2px;height:2px;border-radius:50%;
- background:#fff;box-shadow:0 0 8px #fff;
+ background:white;box-shadow:0 0 8px white;
  animation:twinkle 2s infinite alternate;
 }
-@keyframes twinkle{from{opacity:.2;transform:scale(.7)}to{opacity:1;transform:scale(1.5)}}
+@keyframes twinkle{to{opacity:1;transform:scale(1.5)}}
 .moon{
- position:fixed;top:55px;left:8%;width:65px;height:65px;
+ position:fixed;top:45px;left:8%;width:60px;height:60px;
  border-radius:50%;background:#fff4d2;
- box-shadow:0 0 30px #fff2bd,0 0 75px #fff2bd55;
+ box-shadow:0 0 35px #fff2bd,0 0 75px #fff2bd55;
  z-index:1;
 }
 .shooting{
  position:fixed;width:120px;height:2px;
- background:linear-gradient(90deg,#fff,transparent);
+ background:linear-gradient(90deg,white,transparent);
  transform:rotate(-35deg);animation:shoot 1.2s linear forwards;
  z-index:2;pointer-events:none;
 }
 @keyframes shoot{
- from{opacity:1;transform:translate(0,0) rotate(-35deg)}
  to{opacity:0;transform:translate(-300px,200px) rotate(-35deg)}
 }
-main{position:relative;z-index:3;padding:25px 15px;max-width:680px;margin:auto}
+main{
+ position:relative;z-index:3;padding:25px 15px;
+ max-width:700px;margin:auto;
+}
 h1{font-size:clamp(27px,7vw,43px);color:#f5dcff;margin:18px 0}
 h2{color:#f4c7e7}
 p{line-height:2}
 .subtitle{color:#c4cce9}
 .card{
  margin:22px auto;padding:23px 17px;
- border:1px solid #ffffff25;border-radius:24px;
- background:#ffffff0d;backdrop-filter:blur(12px);
- box-shadow:0 0 35px #8e69ff18;
+ border:1px solid #ffffff30;border-radius:24px;
+ background:#ffffff0d;backdrop-filter:blur(16px);
+ -webkit-backdrop-filter:blur(16px);
+ box-shadow:0 12px 40px #05091655;
 }
 .btn{
- border:0;border-radius:30px;padding:12px 24px;
- color:white;font-size:15px;font-weight:bold;
- background:linear-gradient(120deg,#8158d9,#d35b9c);
- box-shadow:0 5px 20px #a45be955;transition:.2s;
+ border:1px solid #ffffff25;border-radius:30px;
+ padding:12px 24px;color:white;font-size:15px;
+ font-weight:bold;background:linear-gradient(120deg,#8158d9,#d35b9c);
+ box-shadow:0 5px 20px #a45be955;transition:.3s;
 }
 .btn:active{transform:scale(.95)}
-.btn.secondary{background:linear-gradient(120deg,#344c85,#7451a9)}
+.secondary{background:linear-gradient(120deg,#344c85,#7451a9)}
 .hidden{display:none!important}
+
 #intro{
- position:fixed;inset:0;z-index:20;display:flex;
- flex-direction:column;align-items:center;justify-content:center;
- padding:25px;background:radial-gradient(ellipse at center,#27365f,#080d20 75%);
+ position:fixed;inset:0;z-index:20;
+ display:flex;flex-direction:column;
+ align-items:center;justify-content:center;
+ padding:25px;
+ background:radial-gradient(ellipse at center,#27365f,#080d20 75%);
+ transition:opacity .8s,transform .8s;
 }
+#intro.leaving{opacity:0;transform:scale(1.05)}
 #intro p{color:#d4d9f2}
 #nameSky{
- direction:ltr;min-height:90px;font-size:clamp(30px,9vw,55px);
- font-weight:800;letter-spacing:7px;color:white;
- text-shadow:0 0 22px #c9aaff;
+ direction:ltr;min-height:85px;
+ font-size:clamp(35px,9vw,58px);
+ font-weight:800;letter-spacing:7px;
+ color:white;text-shadow:0 0 22px #c9aaff;
 }
 .nameLetter{display:inline-block;opacity:0;animation:formName .8s forwards}
 @keyframes formName{to{opacity:1}}
-#musicBtn{
- border:1px solid #ffffff40;border-radius:30px;
- background:#172345;color:white;padding:9px 14px;
+.fingerprint{
+ color:#e4caff;font-size:13px;
+ border:1px solid #ffffff30;background:#ffffff0d;
+ border-radius:25px;padding:9px 17px;margin:12px;
 }
+
 .music-card{
- margin:25px auto;padding:17px;border-radius:20px;
- border:1px solid #d8b7ff55;background:#ffffff0c;
+ margin:25px auto;padding:18px;
+ border-radius:23px;border:1px solid #e3c1ff55;
+ background:linear-gradient(135deg,#ffffff19,#ffffff05);
+ backdrop-filter:blur(18px);
+ box-shadow:0 12px 35px #05091666;
 }
-.music-title{color:#f3d5ff;font-weight:bold}
-iframe{width:100%;max-width:440px;border:0;border-radius:14px}
+.music-top{display:flex;align-items:center;gap:13px;text-align:right}
+.disc{
+ width:58px;height:58px;flex-shrink:0;
+ border-radius:18px;display:grid;place-items:center;
+ background:linear-gradient(135deg,#9b72d7,#e68fc2);
+ border:1px solid #ffffff55;font-size:27px;
+}
+.music-title{color:#f3d5ff;font-weight:800}
+.music-sub{font-size:12px;color:#c6cde8}
+.equalizer{
+ height:35px;display:flex;justify-content:center;
+ align-items:center;gap:4px;margin:13px;
+}
+.equalizer i{width:4px;height:8px;border-radius:9px;background:#e5b7ff}
+.music-card.playing .equalizer i{animation:bars .65s infinite alternate}
+.music-card.playing .equalizer i:nth-child(2n){animation-delay:.2s}
+.music-card.playing .equalizer i:nth-child(3n){animation-delay:.4s}
+@keyframes bars{to{height:30px}}
+.music-play{
+ width:52px;height:52px;border-radius:50%;
+ border:1px solid #ffffff55;
+ background:linear-gradient(135deg,#a77be8,#d76cae);
+ color:white;font-size:21px;
+}
+.music-hint{font-size:12px;color:#c5cde8}
+#youtubeBox{margin:15px auto 0;max-width:440px}
+#youtubeBox iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:14px}
+
 input{
- width:min(100%,280px);padding:13px;border-radius:13px;
- border:1px solid #bba5ff;background:#101a37;
- color:white;text-align:center;font-size:19px;
- outline:none;margin:12px 0;
+ width:min(100%,280px);padding:13px;
+ border-radius:13px;border:1px solid #bba5ff;
+ background:#101a37;color:white;text-align:center;
+ font-size:19px;margin:12px 0;
 }
 .envelope{
- position:relative;width:180px;height:115px;margin:28px auto;
- background:#bd78ae;border-radius:8px;cursor:pointer;
- box-shadow:0 0 35px #d16da966;transition:.5s;
+ position:relative;width:180px;height:115px;
+ margin:28px auto;background:#bd78ae;
+ border-radius:8px;cursor:pointer;
+ box-shadow:0 0 35px #d16da966;
 }
 .envelope:before{
  content:"";position:absolute;top:0;left:0;right:0;margin:auto;
- border-left:90px solid transparent;border-right:90px solid transparent;
- border-top:70px solid #e6a3d0;z-index:2;
- transform-origin:top;transition:.6s;
+ border-left:90px solid transparent;
+ border-right:90px solid transparent;
+ border-top:70px solid #e6a3d0;
+ z-index:2;transform-origin:top;transition:.6s;
 }
 .envelope:after{
  content:"♥";position:absolute;top:42px;left:0;right:0;
  color:white;font-size:32px;z-index:3;
 }
 .envelope.open:before{transform:rotateX(180deg)}
-.envelope span{position:absolute;bottom:12px;left:0;right:0;color:white;font-size:13px;z-index:4}
+.envelope span{
+ position:absolute;bottom:12px;left:0;right:0;
+ color:white;font-size:13px;z-index:4;
+}
 #letter,#personalLetter{
- margin:20px auto;padding:23px 18px;max-width:540px;
+ margin:20px auto;padding:23px 18px;max-width:550px;
  border:1px solid #e7b9e866;border-radius:20px;
  background:linear-gradient(145deg,#fff0f5,#f4d9ee);
  color:#45264d;box-shadow:0 0 35px #e18bce44;
 }
 #letter h2,#personalLetter h2{color:#9c367c}
-.letter-text{line-height:2.2;white-space:pre-line;min-height:160px}
+.letter-text{
+ line-height:2.2;white-space:pre-line;
+ min-height:160px;text-align:right;
+}
 #personalText{line-height:2.2;white-space:pre-line;text-align:right}
+.seal{
+ width:65px;height:65px;border-radius:50%;
+ margin:20px auto;display:grid;place-items:center;
+ background:radial-gradient(circle,#d65c9d,#8d397e);
+ border:3px double #ffd7ed;
+ box-shadow:0 0 20px #d65c9d88;font-weight:800;
+ direction:ltr;
+}
 .continue{margin:20px auto}
 .memory-heart{
  display:inline-flex;align-items:center;justify-content:center;
- width:75px;height:75px;border-radius:50%;
+ width:65px;height:65px;border-radius:50%;
  margin:8px;background:linear-gradient(140deg,#b95fbc,#744cbb);
- font-size:30px;box-shadow:0 0 20px #c47ad866;
- border:1px solid #ffffff55;transition:.25s;
+ font-size:29px;box-shadow:0 0 20px #c47ad866;
+ border:1px solid #ffffff55;color:white;transition:.3s;
 }
-.memory-heart:active{transform:scale(.9)}
+.memory-heart.found{
+ background:linear-gradient(140deg,#e66da9,#8e5ad2);
+ box-shadow:0 0 30px #f2a0d6;
+}
 .memory-note{
  margin:12px auto;padding:15px;border-radius:16px;
  background:#ffffff12;border:1px solid #ffffff25;
  color:#f6d9f2;line-height:2;
 }
-#finale{
- padding:25px 12px;margin:25px auto;
+#preFinal{
+ margin:24px auto;padding:22px;
+ border:1px solid #f2c4e866;border-radius:22px;
+ background:#ffffff12;
 }
 .big-heart{
  font-size:85px;filter:drop-shadow(0 0 25px #ff8bd6);
  animation:heartbeat 1.5s infinite;
 }
-@keyframes heartbeat{0%,100%{transform:scale(1)}50%{transform:scale(1.13)}}
+@keyframes heartbeat{50%{transform:scale(1.13)}}
 .signature{
  margin:25px auto;padding:22px;border-radius:22px;
  background:#ffffff0c;border:1px solid #ffffff30;
@@ -153,18 +213,41 @@ input{
 }
 .spark{position:fixed;z-index:30;pointer-events:none;animation:spark .8s forwards}
 @keyframes spark{to{transform:translateY(-45px) scale(1.8);opacity:0}}
+#floatingMessage{
+ position:fixed;z-index:5;top:18%;left:50%;
+ transform:translateX(-50%);max-width:85%;
+ padding:9px 16px;border:1px solid #ffffff25;
+ border-radius:30px;background:#111a35bb;
+ backdrop-filter:blur(10px);color:#f5d6f0;
+ font-size:13px;opacity:0;transition:opacity 1s;
+ pointer-events:none;
+}
+#floatingMessage.show{opacity:1}
+#progressWrap{margin:18px auto;max-width:500px}
+.progress-label{font-size:12px;color:#c9cfea;margin-bottom:7px}
+.progress-track{height:7px;background:#ffffff18;border-radius:10px;overflow:hidden}
+#progress{height:100%;width:0;background:linear-gradient(90deg,#a982ed,#f3a9d4);transition:width .6s}
+#heartSky{position:fixed;inset:0;z-index:4;pointer-events:none}
 footer{color:#9ca7ce;font-size:12px;padding:25px}
+@media(max-width:480px){
+ main{padding:20px 12px}
+ .card{padding:19px 14px}
+ .moon{width:48px;height:48px;top:25px}
+}
 </style>
 </head>
 
 <body>
 <div id="sky"></div>
+<canvas id="heartSky"></canvas>
 <div class="moon"></div>
+<div id="floatingMessage"></div>
 
 <div id="intro">
  <h1>فيه حد مجهزلك حاجة صغيرة يا شهوده ❤️</h1>
  <p>مستعدة تدخلي عالم معمول مخصوص علشانك؟</p>
  <div id="nameSky"></div>
+ <div class="fingerprint">الصفحة دي معمولة بإيدي علشانك ❤️</div>
  <button class="btn" onclick="enterWorld()">ادخلي عالمنا ✨</button>
 </div>
 
@@ -172,17 +255,27 @@ footer{color:#9ca7ce;font-size:12px;padding:25px}
  <h1>عالم شهوده ❤️</h1>
  <p class="subtitle">مكان صغير... بس جواه كلام كتير ليكي</p>
 
- <section class="music-card">
-  <div class="music-title">أغنيتنا يا شهوده 🎵</div>
-  <p>نفسي أعيش كل الليالي وياك ❤️</p>
-  <iframe
-   height="200"
-   src="https://www.youtube-nocookie.com/embed/CwKvsoCILOw"
-   title="أغنية شهوده"
-   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-   allowfullscreen>
-  </iframe>
-  <p style="font-size:12px;color:#bfc8e8">اضغطي تشغيل علشان تسمعي الأغنية</p>
+ <div id="progressWrap">
+  <div class="progress-label" id="progressLabel">رحلتك لسه بتبدأ يا شهوده ✨</div>
+  <div class="progress-track"><div id="progress"></div></div>
+ </div>
+
+ <section class="music-card" id="musicCard">
+  <div class="music-top">
+   <div class="disc">♫</div>
+   <div style="flex:1">
+    <div class="music-title">أغنيتنا يا شهوده ❤️</div>
+    <div class="music-sub">TUL8TE • نفسي أعيش كل الليالي وياك</div>
+   </div>
+   <span style="font-size:22px;color:#f5b8dc">♥</span>
+  </div>
+  <div class="equalizer">
+   <i></i><i></i><i></i><i></i><i></i><i></i>
+   <i></i><i></i><i></i><i></i><i></i><i></i>
+  </div>
+  <button class="music-play" onclick="loadSong()" id="musicToggle">▶</button>
+  <p class="music-hint">اضغطي هنا وكمّلي يا شهوده ❤️</p>
+  <div id="youtubeBox" class="hidden"></div>
  </section>
 
  <section class="card" id="question">
@@ -206,43 +299,40 @@ footer{color:#9ca7ce;font-size:12px;padding:25px}
   <div id="letter" class="hidden">
    <h2>إلى شهودتي الجميلة ❤️</h2>
    <div id="letterText" class="letter-text"></div>
-   <button id="continueOne" class="btn continue hidden" onclick="showPersonal()">
-    كمّلي المفاجأة يا شهوده ✨
-   </button>
+   <div class="seal">A ♥ S</div>
+   <button id="continueOne" class="btn continue hidden" onclick="showPersonal()">كمّلي المفاجأة يا شهوده ✨</button>
   </div>
 
   <section id="personalLetter" class="hidden">
    <h2>من قلبي ليكي، ومن إيدي كمان ❤️</h2>
    <div id="personalText"></div>
-   <button id="continueTwo" class="btn continue hidden" onclick="showMemories()">
-    لسه فيه مفاجآت تانية 🥹
-   </button>
+   <button id="continueTwo" class="btn continue hidden" onclick="showMemories()">لسه فيه مفاجآت تانية 🥹</button>
   </section>
 
   <section id="memories" class="card hidden">
-   <h2>3 قلوب... وكل قلب وراه كلمة ❤️</h2>
-   <p>اختاري قلب وافتحي الرسالة اللي جواه</p>
-   <div>
-    <button class="memory-heart" onclick="openMemory(0)">♥</button>
-    <button class="memory-heart" onclick="openMemory(1)">♥</button>
-    <button class="memory-heart" onclick="openMemory(2)">♥</button>
-   </div>
+   <h2>خمس قلوب... وخمس رسائل ليكي ❤️</h2>
+   <p>افتحي كل قلب واكتشفي الرسالة اللي جواه</p>
+   <button class="memory-heart" onclick="openMemory(0)">♥</button>
+   <button class="memory-heart" onclick="openMemory(1)">♥</button>
+   <button class="memory-heart" onclick="openMemory(2)">♥</button>
+   <button class="memory-heart" onclick="openMemory(3)">♥</button>
+   <button class="memory-heart" onclick="openMemory(4)">♥</button>
    <div id="memoryNote" class="memory-note hidden"></div>
-   <button id="continueThree" class="btn continue hidden" onclick="showFinale()">
-    افتحي آخر مفاجأة يا شهوده 💗
-   </button>
+   <button id="continueThree" class="btn continue hidden" onclick="showPreFinal()">افتحي آخر مفاجأة يا شهوده 💗</button>
+  </section>
+
+  <section id="preFinal" class="hidden">
+   <p style="color:#eac8ff">استني لحظة يا شهوده...</p>
+   <h2>قبل ما تكمّلي، عايزك تعرفي إنك غالية عندي أوي ❤️</h2>
+   <p>خدي نفس صغير... الرسالة الأخيرة مستنياكي.</p>
+   <button class="btn" onclick="showFinale()">كمّلي للنهاية ✨</button>
   </section>
 
   <section id="finale" class="hidden">
    <div class="big-heart">💖</div>
    <h1>عارفة إيه أحلى صدفة في حياتي؟</h1>
-   <p style="font-size:19px;color:#f4d6ff">
-    إنك بقيتي جزء منها يا شهوده ❤️
-   </p>
-   <p>
-    دي مش نهاية الموقع...<br>
-    دي بداية حكايات كتير لسه مستنيانا سوا ♾️
-   </p>
+   <p style="font-size:19px;color:#f4d6ff">إنك بقيتي جزء منها يا شهوده ❤️</p>
+   <p>دي مش نهاية الموقع...<br>دي بداية حكايات كتير لسه مستنيانا سوا ♾️</p>
 
    <div class="signature">
     <small>Made with love by</small>
@@ -250,7 +340,8 @@ footer{color:#9ca7ce;font-size:12px;padding:25px}
     <small>For my Shahoda ❤️</small>
     <p>مش كل الناس بتعرف تكتب اللي جواها، فقررت أعملهولك بإيدي.</p>
    </div>
-
+   <button class="btn secondary" onclick="showMemoryMode()">ارجعي اقري الرسائل تاني 💌</button>
+   <br><br>
    <button class="btn" onclick="replay()">عايزة أعيش المفاجأة من الأول؟ 🔁</button>
   </section>
  </section>
@@ -261,7 +352,7 @@ footer{color:#9ca7ce;font-size:12px;padding:25px}
 <script>
 // نجوم السماء
 const sky=document.getElementById('sky');
-for(let i=0;i<150;i++){
+for(let i=0;i<155;i++){
  const s=document.createElement('i');
  s.className='star';
  s.style.left=Math.random()*100+'%';
@@ -271,7 +362,7 @@ for(let i=0;i<150;i++){
  sky.appendChild(s);
 }
 
-// تكوين اسم SHAHD
+// اسم SHAHD
 const nameSky=document.getElementById('nameSky');
 'SHAHD'.split('').forEach((letter,i)=>{
  const span=document.createElement('span');
@@ -292,10 +383,33 @@ function shootingStar(){
 }
 setInterval(shootingStar,3500);
 
+// رسائل عشوائية
+const floatingMessages=[
+ 'وجودك في حياتي حاجة جميلة يا شهوده ❤️',
+ 'كل تفصيلة هنا معمولة علشانك ✨',
+ 'يا رب نفضل نضحك سوا دايمًا 💗',
+ 'إنتي ليكي مكانة خاصة عندي 🥹',
+ 'لسه الحكاية فيها مفاجآت ♾️'
+];
+let floatIndex=0;
+function showFloatingMessage(){
+ const el=document.getElementById('floatingMessage');
+ el.textContent=floatingMessages[floatIndex++%floatingMessages.length];
+ el.classList.add('show');
+ setTimeout(()=>el.classList.remove('show'),3000);
+}
+setInterval(showFloatingMessage,10500);
+
 // الدخول
+let entered=false;
 function enterWorld(){
- document.getElementById('intro').classList.add('hidden');
- heartRain(12);
+ if(entered)return;
+ entered=true;
+ const intro=document.getElementById('intro');
+ intro.classList.add('leaving');
+ setTimeout(()=>intro.classList.add('hidden'),850);
+ heartRain(15);
+ updateProgress(10,'وصلتي لبداية الرحلة ✨');
 }
 
 // قلوب متحركة
@@ -314,7 +428,32 @@ function heartRain(count=30){
  }
 }
 
-// الانتقال للمفاجأة
+function updateProgress(percent,label){
+ document.getElementById('progress').style.width=percent+'%';
+ document.getElementById('progressLabel').textContent=label;
+}
+
+// تشغيل الأغنية: نعرض مشغل YouTube الرسمي عند الضغط
+let songLoaded=false;
+function loadSong(){
+ if(songLoaded){
+  document.getElementById('youtubeBox').scrollIntoView({behavior:'smooth',block:'center'});
+  return;
+ }
+ songLoaded=true;
+ const box=document.getElementById('youtubeBox');
+ box.classList.remove('hidden');
+ box.innerHTML=`<iframe
+ src="https://www.youtube-nocookie.com/embed/CwKvsoCILOw?playsinline=1&rel=0"
+ title="أغنيتنا يا شهوده"
+ allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+ allowfullscreen></iframe>`;
+ document.getElementById('musicCard').classList.add('playing');
+ document.getElementById('musicToggle').textContent='♪';
+ box.scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+// فتح السؤال
 function reveal(){
  const val=document.getElementById('answer').value;
  if(val.trim()===''){
@@ -323,7 +462,9 @@ function reveal(){
  }
  document.getElementById('question').classList.add('hidden');
  document.getElementById('surprise').classList.remove('hidden');
- heartRain(55);
+ updateProgress(25,'أول مفاجأة ظهرت... ولسه فيه أكتر 💌');
+ heartRain(35);
+ document.getElementById('surprise').scrollIntoView({behavior:'smooth'});
 }
 
 // الرسالة الأولى
@@ -347,8 +488,7 @@ function typeText(target,text,speed,callback){
  target.textContent='';
  function write(){
   if(i<text.length){
-   target.textContent+=text.charAt(i);
-   i++;
+   target.textContent+=text.charAt(i++);
    setTimeout(write,speed);
   }else if(callback){callback();}
  }
@@ -361,16 +501,15 @@ function openLetter(){
  document.getElementById('envelope').classList.add('open');
  setTimeout(()=>{
   document.getElementById('letter').classList.remove('hidden');
-  heartRain(30);
-  typeText(
-   document.getElementById('letterText'),
-   message,45,
-   ()=>document.getElementById('continueOne').classList.remove('hidden')
-  );
+  heartRain(25);
+  typeText(document.getElementById('letterText'),message,38,()=>{
+   document.getElementById('continueOne').classList.remove('hidden');
+   updateProgress(40,'وصلتي لرسالة من القلب ❤️');
+  });
  },550);
 }
 
-// الرسالة الشخصية من أحمد
+// الرسالة الشخصية
 const personalMessage=`يا شهوده ❤️
 
 عارفة إن الموقع ده مش مجرد صفحة على الإنترنت،
@@ -403,69 +542,122 @@ const personalMessage=`يا شهوده ❤️
 function showPersonal(){
  const section=document.getElementById('personalLetter');
  section.classList.remove('hidden');
- heartRain(25);
- typeText(
-  document.getElementById('personalText'),
-  personalMessage,38,
-  ()=>document.getElementById('continueTwo').classList.remove('hidden')
- );
+ heartRain(20);
+ typeText(document.getElementById('personalText'),personalMessage,32,()=>{
+  document.getElementById('continueTwo').classList.remove('hidden');
+  updateProgress(55,'لسه فيه خمس رسائل مخبيين ليكي 💗');
+ });
  section.scrollIntoView({behavior:'smooth',block:'center'});
 }
 
-// القلوب والرسائل الثلاث
+// خمس رسائل
 const memories=[
  'أجمل حاجة في يومي إن فيه حد بيخليني أبتسم من قلبي... وإنتي الحد ده يا شهوده ❤️',
  'نفسي كل الأيام اللي جاية يكون فيها ضحك وذكريات ومواقف حلوة نفضل نفتكرها سوا 🥹',
- 'لو هختار أكتب أمنية واحدة، هتكون إننا نفضل جنب بعض ونختار بعض كل يوم ♾️'
+ 'لو هختار أكتب أمنية واحدة، هتكون إننا نفضل جنب بعض ونختار بعض كل يوم ♾️',
+ 'كل تفصيلة صغيرة بتفكرني إن وجودك في حياتي نعمة جميلة 💗',
+ 'مهما كان اليوم طويل، أتمنى نفضل دايمًا سبب في ابتسامة بعض ❤️'
 ];
-let memoryOpened=[false,false,false];
+let memoryOpened=[false,false,false,false,false];
+
+function showMemories(){
+ const section=document.getElementById('memories');
+ section.classList.remove('hidden');
+ section.scrollIntoView({behavior:'smooth',block:'center'});
+ heartRain(20);
+ updateProgress(55,'دوري على كل القلوب الخمسة ❤️');
+}
 
 function openMemory(index){
  const note=document.getElementById('memoryNote');
  note.classList.remove('hidden');
  note.textContent=memories[index];
  memoryOpened[index]=true;
- heartRain(12);
+ document.querySelectorAll('.memory-heart')[index].classList.add('found');
+ heartRain(8);
+ const count=memoryOpened.filter(Boolean).length;
+ updateProgress(55+count*7,`فتحتي ${count} من 5 قلوب ❤️`);
  if(memoryOpened.every(Boolean)){
   document.getElementById('continueThree').classList.remove('hidden');
+  note.textContent+='\\n\\nفتحتي كل القلوب يا شهوده! استعدي لآخر مفاجأة 💌';
  }
 }
 
-// النهاية
-function showMemories(){
- const section=document.getElementById('memories');
+// قبل النهاية
+function showPreFinal(){
+ const section=document.getElementById('preFinal');
  section.classList.remove('hidden');
  section.scrollIntoView({behavior:'smooth',block:'center'});
- heartRain(25);
+ updateProgress(95,'قربتي توصلي لآخر رسالة ✨');
+ heartRain(18);
 }
+
+// رسم قلب بالنجوم
+function drawHeartSky(){
+ const canvas=document.getElementById('heartSky');
+ const ctx=canvas.getContext('2d');
+ const dpr=Math.min(window.devicePixelRatio||1,2);
+ canvas.width=innerWidth*dpr;
+ canvas.height=innerHeight*dpr;
+ canvas.style.width=innerWidth+'px';
+ canvas.style.height=innerHeight+'px';
+ ctx.scale(dpr,dpr);
+ const pts=[];
+ for(let t=0;t<Math.PI*2;t+=.055){
+  const x=16*Math.pow(Math.sin(t),3);
+  const y=13*Math.cos(t)-5*Math.cos(2*t)-2*Math.cos(3*t)-Math.cos(4*t);
+  pts.push({x:innerWidth/2+x*8,y:innerHeight*.42-y*8});
+ }
+ let n=0;
+ function frame(){
+  ctx.clearRect(0,0,innerWidth,innerHeight);
+  for(let i=0;i<Math.min(n,pts.length);i++){
+   const p=pts[i];
+   ctx.beginPath();ctx.arc(p.x,p.y,1.8,0,Math.PI*2);
+   ctx.fillStyle='rgba(255,190,230,.9)';
+   ctx.shadowBlur=12;ctx.shadowColor='#ff9bd8';ctx.fill();
+  }
+  if(n<pts.length){n+=3;requestAnimationFrame(frame);}
+ }
+ frame();
+}
+
 function showFinale(){
  const section=document.getElementById('finale');
  section.classList.remove('hidden');
  section.scrollIntoView({behavior:'smooth',block:'center'});
+ updateProgress(100,'وصلتي للنهاية يا شهوده... بس الحكاية لسه مكملة ♾️');
  heartRain(65);
+ drawHeartSky();
+}
+
+function showMemoryMode(){
+ const section=document.getElementById('memories');
+ section.classList.remove('hidden');
+ section.scrollIntoView({behavior:'smooth',block:'center'});
+ updateProgress(100,'ارجعي افتحي الرسائل براحتك يا شهوده 💌');
 }
 
 // إعادة التجربة
 function replay(){
  opened=false;
- memoryOpened=[false,false,false];
+ memoryOpened=[false,false,false,false,false];
+ entered=false;
  document.getElementById('answer').value='';
- document.getElementById('question').classList.remove('hidden');
- document.getElementById('surprise').classList.add('hidden');
- document.getElementById('letter').classList.add('hidden');
- document.getElementById('personalLetter').classList.add('hidden');
- document.getElementById('memories').classList.add('hidden');
- document.getElementById('finale').classList.add('hidden');
- document.getElementById('continueOne').classList.add('hidden');
- document.getElementById('continueTwo').classList.add('hidden');
- document.getElementById('continueThree').classList.add('hidden');
- document.getElementById('secretBtn')?.classList.add('hidden');
+ ['question','surprise','letter','personalLetter','memories','preFinal','finale']
+ .forEach(id=>document.getElementById(id).classList.add('hidden'));
+ ['continueOne','continueTwo','continueThree']
+ .forEach(id=>document.getElementById(id).classList.add('hidden'));
  document.getElementById('memoryNote').classList.add('hidden');
  document.getElementById('memoryNote').textContent='';
+ document.querySelectorAll('.memory-heart').forEach(b=>b.classList.remove('found'));
  document.getElementById('envelope').classList.remove('open');
  document.getElementById('letterText').textContent='';
  document.getElementById('personalText').textContent='';
- document.getElementById('intro').classList.remove('hidden');
+ document.getElementById('intro').classList.remove('hidden','leaving');
+ document.getElementById('progress').style.width='0';
+ document.getElementById('progressLabel').textContent='رحلتك لسه بتبدأ يا شهوده ✨';
+ document.getElementById('heartSky').getContext('2d').clearRect(0,0,innerWidth,innerHeight);
  window.scrollTo({top:0,behavior:'smooth'});
 }
 
@@ -483,3 +675,5 @@ document.addEventListener('pointerdown',e=>{
 </script>
 </body>
 </html>
+
+
